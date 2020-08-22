@@ -20,7 +20,7 @@ Daha sonra uygulamayı C++ ile Visual Studio ortamında yazacağımızdan dolay�
 
 Kaynak dosyalarına sağ tıklayıp ekle -> yeni öğe dedikten sonra C++ kaynak dosyasını sağ altta ekle butonuna basarak oluşturuyoruz.
 
-**ÖNEMLİ:** Bu işlemleri yaptıktan sonra eğer derleyicimizin yukarısında Debug seçeneği x86 ise onu x64 yapıyoruz.
+**ÖNEMLİ:** Bu işlemleri yaptıktan sonra eğer derleyicimizin yukarısında Debug seçeneği x86 ise onu x64 yapıyoruz. Bu işlemin sebebi OpenCV'nin v3.0 ile birlikte yalnızca x64 mimariyi desteklemesidir. Ayrıca **debug** mode yerine **release** mode çalışmak isteyebilirsin. Bunun için yapman gereken yalnızca son adımda kullanılan **opencv_world411d.lib** ismindeki **-d** harfini silmektir, bu debug anlamına gelir.
 
 
 
@@ -36,8 +36,11 @@ Yine sizin kurduğunuz dizine gore degistirip opencv\build\x64\vc14\lib dizinini
 
 **Yapılandırma Özellikleri -> VC++ Dizinleri -> Kitaplik Dizinleri** kısmına yapıştırın. Ben kütüphane dosyalarını C'ye çıkardığımdan, C:\opencv\build\x64\vc14\lib adresini eklemiş oluyorum.
 
+Son olarak kurduğunuz sürüme göre faklılık oluşturan **opencv_world411d.lib** dosya ismini:
 
-VC++ Dizinleri deki işlemlerimizi hallettikten sonra **Yapılandırma Özellikleri -> Bağlayıcı -> Giriş -> Ek Bağımlılıklar** seçeneğine tıklıyoruz. *C:\opencv\build\x64\vc14\lib* dizininde bulunan, **opencv_world320d.lib** dosyasını ekliyoruz ve pencereleri uygula diyerek kapatıyoruz.
+VC++ Dizinleri deki işlemlerimizi hallettikten sonra **Yapılandırma Özellikleri -> Bağlayıcı -> Giriş -> Ek Bağımlılıklar** seçeneğine tıklıyoruz. *C:\opencv\build\x64\vc14\lib* dizininde bulunan, **opencv_world411d.lib** dosyasını ekliyoruz (debug mode için) ve pencereleri uygula diyerek kapatıyoruz.
 
 Bu işlemlerden sonra örnek proje kodları çalıştırılabilir.
+
+
 
